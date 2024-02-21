@@ -1,0 +1,5 @@
+---
+- hosts: portfolio
+  become: true
+  roles:
+    - portfolio_website

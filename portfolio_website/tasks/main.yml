@@ -1,0 +1,27 @@
+---
+- name: Update packages 
+  shell: yes | yum update 
+
+- name: Install Apache web server
+  yum:
+    name: httpd
+    state: present
+
+# Uncomment the following tasks if you want to ensure the directory exists
+# - name: Ensure the "/var/www/html/" directory exists
+#   file:
+#     path: /var/www/html/
+#     state: directory
+
+- name: Copy website files to server
+  copy:
+    src: "../files/"  # Assuming your website files are in the 'files' directory next to this role
+    dest: /var/www/html/
+  notify:
+    - Restart Apache
+
+- name: Start Apache on boot
+  service:
+    name: httpd
+    enabled: yes
+    state: started
