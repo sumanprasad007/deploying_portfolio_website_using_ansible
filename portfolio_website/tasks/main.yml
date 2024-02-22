@@ -1,6 +1,6 @@
 ---
 - name: Update packages 
-  shell: yes | apt update 
+  shell: yes | yum update 
 
 - name: Install Apache web server
   yum:
