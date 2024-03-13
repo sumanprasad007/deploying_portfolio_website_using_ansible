@@ -1,2 +1,2 @@
 [portfolio]
-Portfolio ansible_host=54.210.244.154 ansible_user=ansible ansible_ssh_pass=test@101
+Portfolio ansible_host=54.167.208.200 ansible_user=ansible ansible_ssh_pass=test@101

@@ -1,0 +1,7 @@
+--- 
+- name: Update Packages
+  package:
+    name: "{{ packages[ansible_os_family] }}"
+    state: latest
+  when: packages[ansible_os_family] is defined
+  
