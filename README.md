@@ -12,7 +12,7 @@ This repository contains an Ansible role for deploying a portfolio website. The 
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+
 
 ## Prerequisites
 
@@ -50,10 +50,10 @@ Ansible is an open-source automation tool that simplifies complex infrastructure
 
 Follow these steps to get started with deploying your portfolio website:
 
-1. Clone this repository: `git clone https://github.com/your-username/your-portfolio-repo.git`
-2. Navigate to the project directory: `cd your-portfolio-repo`
-3. Edit the Ansible variables in `vars/main.yml` to match your server configuration.
-4. Run the Ansible playbook: `ansible-playbook -i your-inventory-file site.yml`
+1. Clone this repository: `git clone https://github.com/sumanprasad007/deploying_portfolio_website_using_ansible.git`
+2. Navigate to the project directory: `cd deploying_portfolio_website_using_ansible`
+3. Edit the Ansible variables in `vars/main.yml` & `inventory` to match your server configuration.
+4. Run the Ansible playbook: `ansible-playbook -i inventory main.yml`
 
 ## Usage
 
@@ -66,4 +66,8 @@ Adjust the variables in `vars/main.yml` to match your environment and website se
 Run the Ansible playbook to deploy your portfolio website:
 
 ```bash
-ansible-playbook -i your-inventory-file site.yml
+ansible-playbook -i inventory main.yml
+
+### Contributing
+
+If you'd like to contribute, feel free to open an issue or submit a pull request. We welcome improvements and suggestions!
