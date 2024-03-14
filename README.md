@@ -61,7 +61,7 @@ Follow these steps to get started with deploying your portfolio website:
 
 Adjust the variables in `vars/main.yml` to match your environment and website setup. Customize package names, web server configurations, and file paths as needed.
 
-### Commands to Folllow along:
+## Commands to setup Ansible Control Nodes:
 
 ```bash
 #!/bin/bash
@@ -95,9 +95,14 @@ sudo visudo
 
 # Uncomment the '%wheel ALL=(ALL) ALL' line
 # Press Ctrl+x, then press y to save and exit
+```
 
+```bash
 # Check the status of the SSH service
 sudo systemctl status sshd
+
+# Try to connect to the server using user & password
+ssh ansible@ip
 ```
 
 ### Deploying the Website
