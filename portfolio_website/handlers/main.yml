@@ -3,3 +3,10 @@
   service:
     name: httpd
     state: restarted
+  when: ansible_os_family == "RedHat"
+
+- name: Restart Apache2 on Ubuntu Server
+  service:
+    name: apache2
+    state: restarted
+  when: ansible_os_family == "Ubuntu"

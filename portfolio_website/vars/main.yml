@@ -1,1 +1,12 @@
 ---
+packages:
+  RedHat: "yum"
+  Ubuntu: "apt"
+
+web_server_packages:
+  RedHat: "httpd"
+  Ubuntu: "apache2"
+  
+web_server_services:
+  RedHat: "httpd"
+  Ubuntu: "apache2"

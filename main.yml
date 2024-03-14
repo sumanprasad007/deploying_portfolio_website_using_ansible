@@ -1,5 +1,7 @@
 ---
 - hosts: portfolio
   become: true
+  gather_facts: false
+  gather_subset: network
   roles:
     - portfolio_website

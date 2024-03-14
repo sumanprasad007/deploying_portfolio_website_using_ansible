@@ -1,0 +1,17 @@
+--- 
+- name: Update Packages
+  package:
+    name: "{{ packages[ansible_os_family] }}"
+    state: latest
+  when: packages[ansible_os_family] is defined
+
+- name: Ensure Web Server is installed
+  package: 
+    name: "{{ web_server_packages[ansible_os_family] }}"
+    state: present
+  when: web_server_packages[ansible_os_family] is defined
+  
+- name: Copy website files to the Server
+  copy:
+    src: "../files/"
+    dest: /var/www/html/

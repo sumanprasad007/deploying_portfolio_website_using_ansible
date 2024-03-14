@@ -1,0 +1,48 @@
+---
+- name: Update packages for Rhel
+  shell: yes | yum update
+  when: ansible_os_family == "RedHat" 
+
+- name: Update packages for Ubuntu
+  shell: yes | apt update
+  when: ansible_os_family == "Ubuntu"
+
+- name: Install Httpd web server
+  yum:
+    name: httpd
+    state: present
+  when: ansible_os_family == "RedHat"
+
+- name: Install Apache2 Web Server
+  apt:
+    name: apache2
+    state: present
+  when: ansible_os_family == "Ubuntu"
+
+- name: Ensure the "/var/www/html/" directory exists
+  file:
+    path: /var/www/html/
+    state: directory
+
+- name: Copy website files to server
+  copy:
+    src: "../files/"  # Assuming your website files are in the 'files' directory next to this role
+    dest: /var/www/html/
+  # notify:
+  #   - Start Httpd Server on Redhat
+  #   - Start Apache2 on Ubuntu Server
+
+# handlers:
+- name: Start Httpd Server on Redhat
+  service:
+    name: httpd
+    enabled: yes
+    state: started
+  when: ansible_os_family == "RedHat"
+
+- name: Start Apache2 on Ubuntu Server
+  service:
+    name: apache2
+    enabled: yes
+    state: started
+  when: ansible_os_family == "Ubuntu"
