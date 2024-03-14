@@ -13,10 +13,10 @@
         name: httpd
         state: present
 
-    # - name: Ensure the "/var/www/html/" directory exist
-    #   file:
-    #     path: /var/www/html/
-    #     state: directory
+    - name: Ensure the "/var/www/html/" directory exist
+      file:
+        path: /var/www/html/
+        state: directory
 
     - name: Copy website files to server
       copy:
