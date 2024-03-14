@@ -1,6 +1,7 @@
 ---
 - name: Deploy Portfolio Website
   hosts: port
+  gather_facts: false
   become: true
 
   tasks:
