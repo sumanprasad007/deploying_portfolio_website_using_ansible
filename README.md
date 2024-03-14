@@ -61,6 +61,45 @@ Follow these steps to get started with deploying your portfolio website:
 
 Adjust the variables in `vars/main.yml` to match your environment and website setup. Customize package names, web server configurations, and file paths as needed.
 
+### Commands to Folllow along:
+
+```bash
+#!/bin/bash
+
+# Update packages
+sudo yum update
+
+# Install epel-release
+yes | sudo yum install epel-release
+
+# Update packages again
+sudo yum update
+
+# Install Ansible
+yes | sudo yum install ansible
+
+# Clone the repository
+git clone https://github.com/sumanprasad007/deploying_portfolio_website_using_ansible.git
+
+# Navigate to the repository directory
+cd deploying_portfolio_website_using_ansible
+
+# Make setup_script.sh executable
+chmod +x setup_script.sh
+
+# Run setup_script.sh
+./setup_script.sh
+
+# Open sudoers file for editing
+sudo visudo
+
+# Uncomment the '%wheel ALL=(ALL) ALL' line
+# Press Ctrl+x, then press y to save and exit
+
+# Check the status of the SSH service
+sudo systemctl status sshd
+```
+
 ### Deploying the Website
 
 Run the Ansible playbook to deploy your portfolio website:
