@@ -20,7 +20,8 @@
 
     - name: Copy website files to server
       copy:
-        src: ./
+        # src: ./
+        src: "../files/" 
         dest: /var/www/html/
       notify:
         - Restart Apache
